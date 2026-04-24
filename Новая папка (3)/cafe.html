@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тёплый Ламповый — Кафе</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <span class="logo">Кафе Тёплый</span>
+        <div class="nav-links">
+            <a href="#about">Наш уголок</a>
+            <a href="#menu">Меню</a>
+            <a href="#gallery">Галерея</a>
+            <a href="#contact">Контакты</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Тёплый Ламповый</h1>
+        <p>Где время останавливается</p>
+        <button id="scrollMenu">Меню</button>
+    </header>
+
+    <section id="about">
+        <h2>Наш уголок</h2>
+        <div class="grid">
+            <div class="card" data-title="Атмосфера" data-description="В нашем кафе мы используем только теплый спектр освещения (2700К), чтобы создать ощущение домашнего уюта. Мягкие кресла и запах воска помогут вам забыть о городской суете.">
+                <span>🕯️</span>
+                <h3>Атмосфера</h3>
+                <p>Мягкий свет свечей и уютные диваны</p>
+            </div>
+            
+            <div class="card" data-title="Кофе" data-description="Мы закупаем зерна класса Specialty у проверенных фермеров. Каждая чашка готовится на профессиональной машине с соблюдением точного веса и температуры воды.">
+                <span>☕</span>
+                <h3>Кофе</h3>
+                <p>Свежемолотый зерновой кофе</p>
+            </div>
+            
+            <div class="card" data-title="Выпечка" data-description="Наша гордость — домашние пироги. Мы не используем заморозку. Всё, что вы видите на витрине, было приготовлено сегодня утром нашими кондитерами.">
+                <span>🥧</span>
+                <h3>Выпечка</h3>
+                <p>Домашние пироги каждый день</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="beige">
+        <h2>Меню</h2>
+        <div class="tabs">
+            <button class="filter-btn active" data-filter="all">Всё</button>
+            <button class="filter-btn" data-filter="drink">Напитки</button>
+            <button class="filter-btn" data-filter="food">Еда</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+            <div class="item" data-cat="drink">
+                <img src="unnamed.jpg" alt="Эспрессо">
+                <h4>Эспрессо</h4>
+                <p>Крепкий и насыщенный</p>
+                <b>700 тг</b>
+            </div>
+            <div class="item" data-cat="drink">
+                <img src="unnamed2.jpg" alt="Латте">
+                <h4>Латте</h4>
+                <p>Нежный с молоком</p>
+                <b>1000 тг</b>
+            </div>
+            <div class="item" data-cat="drink">
+                <img src="капучино.jpg" alt="Капучино">
+                <h4>Капучино</h4>
+                <p>Классика с пенкой</p>
+                <b>1000 тг</b>
+            </div>
+            <div class="item" data-cat="drink">
+                <img src="американо.jpg" alt="Американо">
+                <h4>Американо</h4>
+                <p>Черный кофе</p>
+                <b>1200 тг</b>
+            </div>
+            <div class="item" data-cat="drink">
+                <img src="флэт.jpg" alt="Флэт Уайт">
+                <h4>Флэт Уайт</h4>
+                <p>Насыщенный молочный вкус</p>
+                <b>1200 тг</b>
+            </div>
+            <div class="item" data-cat="drink">
+                <img src="чай масало.jpg" alt="Чай">
+                <h4>Чай</h4>
+                <p>Зеленый, Черный, Индийский</p>
+                <b>600 тг</b>
+            </div>
+
+            <div class="item" data-cat="food">
+                <img src="круассан.jpg" alt="Круассан">
+                <h4>Круассан</h4>
+                <p>Сливочный, слоёный</p>
+                <b>600 тг</b>
+            </div>
+            <div class="item" data-cat="food">
+                <img src="тирамису.jpg" alt="Тирамису">
+                <h4>Тирамису</h4>
+                <p>Итальянская классика</p>
+                <b>1500 тг</b>
+            </div>
+            <div class="item" data-cat="food">
+                <img src="панкейки.jpg" alt="Панкейки">
+                <h4>Панкейки</h4>
+                <p>С мёдом и ягодами</p>
+                <b>1200 тг</b>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+    <h2>Галерея</h2>
+    <div class="gallery-grid">
+        <div class="photo g-interior" onclick="openModal(this)"></div>
+        <div class="photo g-bakery" onclick="openModal(this)"></div>
+        <div class="photo g-desserts" onclick="openModal(this)"></div>
+        <div class="photo g-cozy" onclick="openModal(this)"></div>
+        <div class="photo g-window" onclick="openModal(this)"></div>
+        <div class="photo g-evening" onclick="openModal(this)"></div>
+    </div>
+</section>
+
+    <section id="contact" class="beige">
+        <h2>Ждём вас</h2>
+        <p>📍 ул. Ламповая, 7 | 🕐 8:00—23:00 | 📞 8 (999) 123-45-67</p>
+        
+        <form id="bookingForm">
+            <input type="text" id="clientName" placeholder="Имя" required>
+            <input type="tel" id="clientPhone" placeholder="Телефон" required>
+            <button type="submit">Забронировать</button>
+        </form>
+        <div id="bookingResult"></div>
+    </section>
+
+    <footer>
+        <p>© 2026 Тёплый Ламповый </p>
+    </footer>
+
+    <div id="cardModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <hr>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
